@@ -20,7 +20,7 @@ RUN echo "LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so" >> ${HTTP
 RUN mkdir -p /usr/local/apache2/conf.d
 COPY vhosts.conf /usr/local/apache2/conf.d/vhosts.conf
 
-RUN useradd -m -u $UID -s /bin/bash rdmo
+RUN useradd -o --uid $UID -s /bin/bash rdmo
 RUN mkdir -p /var/www/html
 RUN mkdir -p /var/run/apache2
 
