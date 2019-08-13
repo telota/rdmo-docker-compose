@@ -30,7 +30,7 @@ RUN apt install -y \
 
 COPY ./rootfs /
 
-RUN useradd -o --uid $UID -s /bin/bash rdmo
+RUN useradd -m -s /bin/bash rdmo
 USER rdmo
 
 CMD ["/drun.sh"]
